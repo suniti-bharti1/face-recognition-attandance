@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Face Recognition Attendance System</title>
+
+    <!-- FIX: static paths without Jinja error -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-camera"></i> AI Face Recognition Attendance</h1>
+            <p>Female Student Recognition System</p>
+        </header>
+
+        <div class="camera-section">
+            <div class="video-container">
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+
+                <div id="status-overlay" class="status-overlay">
+                    <div id="status-message">Click "Start Camera" to begin</div>
+                    <div id="student-name" class="student-name"></div>
+                </div>
+            </div>
+
+            <div class="camera-controls">
+                <button id="startBtn" class="btn btn-success">
+                    <i class="fas fa-play"></i> Start Camera
+                </button>
+                <button id="stopBtn" class="btn btn-danger" disabled>
+                    <i class="fas fa-stop"></i> Stop Camera
+                </button>
+            </div>
+        </div>
+
+        <div class="attendance-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list"></i> Today's Attendance</h2>
+                <button id="refreshBtn" class="btn btn-primary">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+
+            <div class="attendance-table-container">
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceBody">
+                        <tr>
+                            <td colspan="3" class="no-data">
+                                No attendance records yet. Start the camera!
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <h4>How to use:</h4>
+                    <p>
+                        1. Add student photos to <code>dataset/</code><br>
+                        2. Click "Start Camera"<br>
+                        3. Look at camera<br>
+                        4. Attendance auto-saves to <code>attendance.csv</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIX: static JS path -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
