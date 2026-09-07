@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+insightface
+opencv-python
+numpy
+python-multipart
+websockets
+pydantic

@@ -164,7 +164,7 @@ def mark_attendance(name):
 
         writer.writerow(record)
 
-
 # ---------------- RUN ----------------
 if __name__ == "__main__":
     app.run(debug=False)
+        
